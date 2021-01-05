@@ -18,7 +18,7 @@ public class Houses {
 		drawHouse("medium");
 		drawHouse("large");
 		
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 6; i++) {
 			drawHouse(ran.nextInt(150) + 100,Color.CYAN);
 		}
 	}
@@ -26,16 +26,24 @@ public class Houses {
 	void drawHouse(int height, Color c) {
 		Bot.setPenColor(c);
 		Bot.setPenWidth(10);
-		Bot.setSpeed(20);
+		Bot.setSpeed(10);
 		Bot.penDown();
-		drawFlatRoof();
 		Bot.move(height);
+		drawPointyRoof();
+		Bot.move(height);
+		Bot.turn(270);
+		Bot.move(30);
+		Bot.turn(270);
+		//flat roof
+		Bot.move(height);
+		drawFlatRoof();
 		Bot.move(height);
 		Bot.turn(270);
 		Bot.move(30);
 		Bot.turn(270);
 
 	}
+
 	
 	void drawHouse(String height) {
 		if(height.equals("small")) {
@@ -47,10 +55,18 @@ public class Houses {
 		if(height.equals("large")) {
 			drawHouse(250,Color.CYAN);
 		}
-		void drawFlatRoof() {
-			Bot.turn(90);
-			Bot.move(50);
-			Bot.turn(90);
-		}
+		
+	}
+	void drawFlatRoof() {
+		Bot.turn(90);
+		Bot.move(50);
+		Bot.turn(90);
+	}
+	void drawPointyRoof() {
+		Bot.turn(45);
+		Bot.move(50);
+		Bot.turn(90);
+		Bot.move(50);
+		Bot.turn(45);
 	}
 }
