@@ -26,19 +26,23 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
+		String image = "https://upload.wikimedia.org/wikipedia/commons/9/92/%E2%99%82_Common_Kingfisher_%28Alcedo_atthis%29_Photograph_By_Shantanu_Kuveskar%2C_Mangaon%2C_Maharashtra%2C_India.jpg";
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component com = createImage(image);
 		// 3. use the "createImage()" method below to initialize your Component
-
+		
 		// 4. add the image to the quiz window
-
+		quizWindow.add(com);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String kingfisher = JOptionPane.showInputDialog(null, "What is this bird called?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (kingfisher.equals("Kingfisher")) {
+			JOptionPane.showMessageDialog(null,"Correct");
+		} else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
