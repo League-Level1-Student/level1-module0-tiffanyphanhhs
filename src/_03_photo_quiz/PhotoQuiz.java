@@ -44,21 +44,26 @@ public class PhotoQuiz {
 			JOptionPane.showMessageDialog(null, "Incorrect");
 		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+        
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(com);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		String image2 = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F37%2F2020%2F07%2F14%2FAttract-Cardinals.jpg";
 		// 11. add the second image to the quiz window
-
+		Component com2 = createImage(image2);
+		quizWindow.add(com2);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		String cardinal = JOptionPane.showInputDialog("What is this bird called?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		if (cardinal.equals("Cardinal")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+		} else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
 	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
