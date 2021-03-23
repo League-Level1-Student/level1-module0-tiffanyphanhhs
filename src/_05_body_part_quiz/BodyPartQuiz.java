@@ -59,10 +59,10 @@ public class BodyPartQuiz {
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-		if (condition) {
+		if (guess.equalsIgnoreCase("arnold")) {
 			score = score+1;
 		} else {
-
+			JOptionPane.showMessageDialog(null, "Arnold is the correct answer.");
 		}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
@@ -71,9 +71,35 @@ public class BodyPartQuiz {
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
-
+		guess = JOptionPane.showInputDialog("who is this?");
+		
+		
+		if (guess.equalsIgnoreCase("leonardo")) {
+			score = score+1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Leonardo is the correct answer.");
+		}
+		
+		//3rd Image 
+		
+		showNextImage();
+		guess = JOptionPane.showInputDialog("who is this?");
+		if (guess.equalsIgnoreCase("morgan")) {
+			score = score+1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Morgan is the correct answer.");
+		}
+		
+		//4th Image 
+		showNextImage();
+		guess = JOptionPane.showInputDialog("who is this?");
+		if (guess.equalsIgnoreCase("Jack")) {
+			score = score+1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Jack is the correct answer.");
+		}
 		// 9. Show them their current score
-		System.out.println(score);
+		JOptionPane.showMessageDialog(null,"You're score is " +score);
 	}
 
 	public void showNextImage() {
