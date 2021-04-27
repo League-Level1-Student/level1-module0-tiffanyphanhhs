@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class JackintheBox implements ActionListener {
+	int clicked = 0;
 	public void showButton() {
 		JFrame Jack = new JFrame();
 		Jack.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,15 +23,22 @@ public class JackintheBox implements ActionListener {
 		panel.add(button);
 		
 		button.addActionListener(this);
-		JLabel image = createLabelImage("jackInTheBox.png");
 		panel.add(image);
+		JLabel image = createLabelImage("jackInTheBox.png");
 		Jack.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		clicked = clicked + 1;
+		if (clicked == 5) {
+			
+		}
+	}
 
+	private void image() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	///
@@ -62,6 +70,14 @@ public class JackintheBox implements ActionListener {
 		} catch (Exception e) {
 			System.err.println("Could not find image " + fileName);
 			return new JLabel();
+		}
+		private void playSound(String soundFile) {
+		     try {
+		          AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
+		          sound.play();
+		     } catch (Exception e) {
+		          e.printStackTrace();
+		     }
 		}
 	}
 }
